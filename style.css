@@ -1,0 +1,131 @@
+/* Apply flexbox centering and padding to the body */
+body {
+    font-family: 'Inter', sans-serif; /* Use the Inter font */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1rem; /* Tailwind p-4 */
+}
+
+/* Style for the main chat container */
+.chat-container {
+    width: 100%;
+    max-width: 600px; /* Increased max-width slightly for better look */
+    background-color: #ffffff; /* Tailwind bg-white */
+    border-radius: 0.75rem; /* Tailwind rounded-xl */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* Tailwind shadow-2xl */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 80vh; /* Default height */
+}
+
+/* Responsive height for larger screens */
+@media (min-width: 768px) { /* Tailwind md breakpoint */
+    .chat-container {
+        height: 70vh;
+    }
+}
+
+
+/* Style for the chat header */
+.chat-header {
+    background-color: #059669; /* Tailwind emerald-600 */
+    color: white;
+    padding: 1rem; /* Tailwind p-4 */
+    text-align: center;
+    font-weight: 600; /* Tailwind font-semibold */
+    font-size: 1.125rem; /* Tailwind text-lg */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* Tailwind shadow-md */
+}
+
+/* Style for the messages area */
+.chat-box {
+    flex-grow: 1; /* Allow chat box to take available space */
+    padding: 1rem; /* Tailwind p-4 */
+    overflow-y: auto; /* Add scroll for long conversations */
+    background-color: #f9fafb; /* Tailwind gray-50 */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Replaces space-y-4 */
+}
+
+/* Style for individual messages */
+.message {
+    padding: 0.75rem 1rem; /* Increased padding slightly */
+    max-width: 85%; /* Limit message width */
+    word-wrap: break-word; /* Break long words */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.08); /* Subtle box-shadow */
+    line-height: 1.4; /* Improved readability */
+}
+
+/* Style for user messages */
+.user-message {
+    background-color: #3b82f6; /* Tailwind blue-500 */
+    color: white;
+    align-self: flex-end; /* Align user messages to the right */
+    margin-left: auto; /* Push user messages to the right */
+    /* Rounded corners specific to user message */
+    border-radius: 1rem 1rem 0.25rem 1rem; /* top-left, top-right, bottom-right, bottom-left */
+}
+
+/* Style for bot messages */
+.bot-message {
+    background-color: #e5e7eb; /* Tailwind gray-200 */
+    color: #1f2937; /* Tailwind gray-800 */
+    align-self: flex-start; /* Align bot messages to the left */
+    margin-right: auto; /* Push bot messages to the left */
+    /* Rounded corners specific to bot message */
+    border-radius: 1rem 1rem 1rem 0.25rem; /* top-left, top-right, bottom-right, bottom-left */
+}
+
+/* Style for the input area */
+.input-area {
+    display: flex;
+    align-items: center;
+    padding: 1rem; /* Tailwind p-4 */
+    border-top: 1px solid #e5e7eb; /* Tailwind gray-200 */
+    background-color: white;
+}
+
+/* Style for the text input */
+.user-input {
+    flex-grow: 1; /* Allow input to take available space */
+    padding: 0.75rem; /* Increased padding */
+    border: 1px solid #d1d5db; /* Tailwind gray-300 */
+    border-radius: 0.5rem; /* Tailwind rounded-lg */
+    margin-right: 0.75rem; /* Increased margin */
+    outline: none; /* Remove default outline */
+    /* Focus styles */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.user-input:focus {
+    border-color: #3b82f6; /* Tailwind blue-500 */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3); /* Tailwind ring-blue-500 with opacity */
+}
+
+
+/* Style for the send button */
+.send-button {
+    padding: 0.75rem 1.5rem; /* Increased padding */
+    background-color: #2563eb; /* Tailwind blue-600 */
+    color: white;
+    border: none;
+    border-radius: 0.5rem; /* Tailwind rounded-lg */
+    cursor: pointer;
+    font-weight: 600; /* Tailwind font-semibold */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* Tailwind shadow-md */
+    transition: background-color 0.2s ease-in-out, transform 0.15s ease-in-out;
+}
+
+.send-button:hover {
+    background-color: #1d4ed8; /* Tailwind blue-700 */
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+.send-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* Tailwind ring-blue-500 with opacity */
+}
